@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const RetroHeader = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative bg-gray-900 border-b-4 border-purple-500 shadow-2xl overflow-hidden">
       {/* CRT Scanlines Effect */}
@@ -39,6 +41,7 @@ const RetroHeader = () => {
             </Badge>
 
             <Button
+              onClick={() => navigate("/multiplayer")}
               variant="outline"
               className="border-purple-500 text-purple-300 bg-purple-500/10 hover:bg-purple-500/20 font-mono"
             >
@@ -47,6 +50,7 @@ const RetroHeader = () => {
             </Button>
 
             <Button
+              onClick={() => navigate("/settings")}
               variant="outline"
               className="border-orange-500 text-orange-300 bg-orange-500/10 hover:bg-orange-500/20 font-mono"
             >

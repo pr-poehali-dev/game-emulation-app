@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const GameLibrary = () => {
+  const navigate = useNavigate();
   const games = [
     {
       id: 1,
@@ -156,11 +158,15 @@ const GameLibrary = () => {
 
               {/* Action Buttons */}
               <div className="flex space-x-2">
-                <Button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-mono text-sm">
+                <Button
+                  onClick={() => navigate(`/game/${game.id}`)}
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-mono text-sm"
+                >
                   <Icon name="Play" size={16} className="mr-2" />
                   PLAY
                 </Button>
                 <Button
+                  onClick={() => navigate("/settings")}
                   variant="outline"
                   size="sm"
                   className="border-orange-500 text-orange-300 bg-orange-500/10 hover:bg-orange-500/20 font-mono"
